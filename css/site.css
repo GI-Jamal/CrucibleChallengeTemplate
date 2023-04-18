@@ -101,6 +101,11 @@ font-family: 'Roboto', sans-serif;
   color: var(--jg-nav-toggler-glow);
 }
 
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 #mainNav {
   background: var(--jg-nav-bg-color);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px !important;
@@ -116,23 +121,6 @@ body {
 
 .titleText {
   color: var(--emerald2);
-}
-
-.btn-outline-primary{
-  border-color: var(--emerald);
-  color: var(--emerald);
-}
-
-.btn-outline-primary:hover{
-  border-color: var(--emerald);
-  color: var(--white);
-  background-color: var(--emerald);
-}
-
-.btn-outline-primary:active{
-  border-color: var(--emerald);
-  color: var(--white);
-  background-color: var(--emerald);
 }
 
 .btn-bd-primary {
@@ -202,3 +190,4 @@ footer {
 .appLogo {
   max-width: 400px;
 }
+
