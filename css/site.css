@@ -182,12 +182,24 @@ footer {
   padding-right: 0.5rem;
 }
 
-.devIcons {
-  font-size: 3rem;
-  padding-left: 0.5rem;
+.devIcons > img {
+  max-width: 15%;
+}
+
+#bootstrapLogo {
+  max-width: 19%;
 }
 
 .appLogo {
   max-width: 400px;
 }
 
+@media (min-width: 768px) {
+  .devIcons > img {
+    max-width: 15%;
+  }
+
+  #bootstrapLogo {
+    max-width: 19%;
+  }
+}
