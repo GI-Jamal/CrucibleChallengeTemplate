@@ -24,8 +24,6 @@
   --jg-rich-black: #00171f;
   --jg-prussian-blue: #003459;
   --jg-white: #ffffff;
-
-  /* CSS HEX */
   --jet: rgba(60, 55, 68, 0.61);
   --duke-blue: #090c9bff;
   --byzantine-blue: #3d52d5ff;
@@ -56,6 +54,7 @@
   --federal-blue: #140d4fff;
   --keppel: #4ea699ff;
   --emerald: #2dd881ff;
+  --emerald2: rgb(39, 182, 108);
   --jg-gradient-color: linear-gradient(135deg, #1c164d, #482c69 67%, #863e97);
 
   /* COLOR TESTING */
@@ -63,15 +62,15 @@
   --jg-body-test-color: var(--jg-gradient-color);
   --jg-links-test-color: var(--emerald);
   --jg-links-hover-test-color: var(--hunyadi-yellow);
-  --jg-title-test-color: var(--emerald);
+  --jg-title-test-color: var(--white);
   --jg-nav-text-test-color: var(--carolina-blue);
   --jg-footer-test-color: var(--jet);
   --jg-content-test-color: var(--white);
 
   /* Nav bar colors */
-  --jg-nav-bg-color: var(--jg-dark-slate-gray);
-  --jg-nav-toggler-color: var(--jg-highlight-color);
-  --jg-nav-toggler-glow: rgba(250, 255, 120, 0.55);
+  --jg-nav-bg-color: var(--jg-gradient-color);
+  --jg-nav-toggler-color: var(--emerald);
+  --jg-nav-toggler-glow: var(--emerald);
 
   /* Form colors */
   --jg-formfocus-border-color: var(--jg-secondary-color);
@@ -103,7 +102,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 #mainNav {
-  background: var(--jg-nav-test-color);
+  background: var(--jg-nav-bg-color);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px !important;
 }
 
@@ -115,8 +114,38 @@ body {
   height: 100%;
 }
 
-#testcolor {
-  color: var(--jg-content-test-color) !important;
+.titleText {
+  color: var(--emerald2);
+}
+
+.btn-outline-primary{
+  border-color: var(--emerald);
+  color: var(--emerald);
+}
+
+.btn-outline-primary:hover{
+  border-color: var(--emerald);
+  color: var(--white);
+  background-color: var(--emerald);
+}
+
+.btn-outline-primary:active{
+  border-color: var(--emerald);
+  color: var(--white);
+  background-color: var(--emerald);
+}
+
+.btn-bd-primary {
+  --bs-btn-font-weight: 500;
+  --bs-btn-color: var(--emerald2);
+  --bs-btn-border-color: var(--emerald2);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--emerald2);
+  --bs-btn-hover-border-color: var(--emerald2);
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--emerald);
+  --bs-btn-active-border-color: var(--emerald2);
 }
 
 body {
@@ -143,7 +172,7 @@ footer {
 /* START: Footer */
 .socialicons {
   font-size: 1.5rem;
-  color: var(--jg-links-test-color);
+  color: var(--emerald2);
   transition: color 0.25s;
 }
 
