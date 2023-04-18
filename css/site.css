@@ -69,8 +69,8 @@
 
   /* Nav bar colors */
   --jg-nav-bg-color: var(--jg-gradient-color);
-  --jg-nav-toggler-color: var(--emerald);
-  --jg-nav-toggler-glow: var(--emerald);
+  --jg-nav-toggler-color: var(--emerald2);
+  --jg-nav-toggler-glow: var(--emerald2);
 
   /* Form colors */
   --jg-formfocus-border-color: var(--jg-secondary-color);
@@ -178,7 +178,7 @@ footer {
 }
 
 .checklist > li i {
-  color: var(--jg-secondary-color);
+  color: var(--emerald2);
   padding-right: 0.5rem;
 }
 
