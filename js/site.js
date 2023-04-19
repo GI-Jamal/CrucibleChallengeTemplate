@@ -15,13 +15,3 @@ function displayMessage() {
     text: msg,
   });
 }
-
-function toggleGlow() {
-  let navbar = document.querySelector(".navbar-collapse");
-  let toggler = document.querySelector(".navbar-toggler");
-  if (navbar.classList.contains("show")) {
-    toggler.focus();
-  } else {
-    toggler.blur();
-  }
-}

@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="/css/prism.css" />
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hovercard.css" />
+    <link rel="stylesheet" href="/css/blogCard.css" />
     <link rel="stylesheet" href="/css/site.css" />
 
     <!-- Favicon -->
@@ -50,9 +52,9 @@
   <body>
     <!-- Header Banner -->
     <header id="home">
-      <!-- Navigation Bar -->
+      <!-- Mobile Navigation Bar -->
       <nav
-        class="navbar navbar-expand-lg shadow-lg"
+        class="navbar navbar-expand-lg shadow-lg d-sm-none"
         data-bs-theme="dark"
         id="mainNav"
       >
@@ -74,23 +76,27 @@
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            id="mobileNavToggler"
           >
-            <span class="navbar-toggler-jg">
+            <span class="navbar-toggle-icon">
               <i class="bi bi-list"></i>
             </span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/app.html">The App</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/code.html"
-                  >The Code</a
-                >
+                <a class="nav-link" href="/code.html">The Code</a>
               </li>
               <li class="nav-item">
                 <a
@@ -115,6 +121,90 @@
           </div>
         </div>
       </nav>
+
+      <!-- Desktop Navigation Bar -->
+      <nav
+        class="navbar navbar-expand-lg d-none d-sm-block shadow-lg"
+        data-bs-theme="dark"
+        id="mainNav"
+      >
+        <div class="container-xxl">
+          <a
+            class="navbar-brand border-top border-bottom border-white d-flex align-items-center"
+            href="/index.html"
+          >
+            <img src="/img/JG Logo White.svg" height="40" />
+            APP NAME
+            <!--  TODO: play around with height of image with the height attribute -->
+          </a>
+          <!-- TODO: customize mobile menu button, and complete navbar -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            id="desktopNavToggler"
+          >
+            <span class="navbar-toggler-jg">
+              <i class="bi bi-list"></i>
+            </span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a
+                class="nav-link active offcanvas-title mt-2"
+                aria-current="page"
+                href="/index.html"
+                id="offcanvasNavbarLabel"
+                ><h5>Home</h5></a
+              >
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                id="desktopNavClose"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="/app.html">The App</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/code.html">The Code</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://github.com/GI-Jamal/CrucibleChallengeTemplate"
+                    target="_blank"
+                    >The Repo</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://jamalgibson-portfolio.netlify.app/"
+                    target="_blank"
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog" target="_blank">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Main Content -->
@@ -123,7 +213,7 @@
       <div class="row">
         <div class="col-lg-8 col-12">
           <pre class="line-numbers">
-              <code class="language-js">
+            <code class="language-js">
 function displayMessage() {
     let msg = document.getElementById("message").value;
     Swal.fire(
@@ -134,7 +224,7 @@ function displayMessage() {
         }
     );
 }
-              </code>
+            </code>
           </pre>
         </div>
         <div class="col-lg-4 col-12">
@@ -182,6 +272,10 @@ function displayMessage() {
       crossorigin="anonymous"
     ></script>
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script></script>
+
     <!-- Prism JS -->
     <script src="/js/prism.js"></script>
     <script>
@@ -192,5 +286,9 @@ function displayMessage() {
         "right-trim": true,
       });
     </script>
+
+    <!-- Custom JS -->
+    <script src="/js/site.js"></script>
+    <script></script>
   </body>
 </html>
