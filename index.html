@@ -49,9 +49,9 @@
   <body>
     <!-- Header Banner -->
     <header id="home">
-      <!-- Navigation Bar -->
+      <!-- Mobile Navigation Bar -->
       <nav
-        class="navbar navbar-expand-lg shadow-lg"
+        class="navbar navbar-expand-lg shadow-lg d-sm-none"
         data-bs-theme="dark"
         id="mainNav"
       >
@@ -66,15 +66,16 @@
           </a>
           <!-- TODO: customize mobile menu button, and complete navbar -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler shadow-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            id="mobileNavToggler"
           >
-            <span class="navbar-toggler-jg">
+            <span class="navbar-toggle-icon">
               <i class="bi bi-list"></i>
             </span>
           </button>
@@ -114,6 +115,90 @@
                 <a class="nav-link" href="#blog" target="_blank">Blog</a>
               </li>
             </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Desktop Navigation Bar -->
+      <nav
+        class="navbar navbar-expand-lg d-none d-sm-block shadow-lg"
+        data-bs-theme="dark"
+        id="mainNav"
+      >
+        <div class="container-xxl">
+          <a
+            class="navbar-brand border-top border-bottom border-white d-flex align-items-center"
+            href="/index.html"
+          >
+            <img src="/img/JG Logo White.svg" height="40" />
+            APP NAME
+            <!--  TODO: play around with height of image with the height attribute -->
+          </a>
+          <!-- TODO: customize mobile menu button, and complete navbar -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            id="desktopNavToggler"
+          >
+            <span class="navbar-toggler-jg">
+              <i class="bi bi-list"></i>
+            </span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a
+                class="nav-link active offcanvas-title mt-2"
+                aria-current="page"
+                href="/index.html"
+                id="offcanvasNavbarLabel"
+                ><h5>Home</h5></a
+              >
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                id="desktopNavClose"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="/app.html">The App</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/code.html">The Code</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://github.com/GI-Jamal/CrucibleChallengeTemplate"
+                    target="_blank"
+                    >The Repo</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://jamalgibson-portfolio.netlify.app/"
+                    target="_blank"
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog" target="_blank">Blog</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -159,19 +244,29 @@
           <div class="devIcons">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              title="JavaScript"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="JavaScript"
             />
-
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="HTML5"
             />
 
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="CSS3"
             />
 
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="Bootstrap"
               id="bootstrapLogo"
             />
           </div>
@@ -224,5 +319,19 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script></script>
+
+    <!-- Custom JS -->
+    <script src="/js/site.js"></script>
+    <script>
+      document
+        .getElementById("mobileNavToggler")
+        .addEventListener("blur", function () {
+          this.click();
+        });
+    </script>
   </body>
 </html>

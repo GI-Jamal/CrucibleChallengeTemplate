@@ -92,7 +92,7 @@ font-family: 'Roboto', sans-serif;
 */
 
 /* START: Nav Bar*/
-.navbar-toggler-jg {
+.navbar-toggle-icon {
   color: var(--jg-nav-toggler-color);
   font-size: 1.5rem;
 }
@@ -182,9 +182,6 @@ footer {
   padding-right: 0.5rem;
 }
 
-.devIcons > img {
-  max-width: 10%;
-}
 
 .devIcons img {
   max-width: 10%;
