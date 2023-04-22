@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>APP NAME: A CODING CHALLENGE by Jamal Gibson</title>
+    <title>APP NAME: A Coding Challenge by Jamal Gibson</title>
 
     <!-- Boostrap CSS -->
     <link
@@ -40,21 +40,18 @@
     <link rel="stylesheet" href="/css/prism.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hovercard.css" />
-    <link rel="stylesheet" href="/css/blogCard.css" />
     <link rel="stylesheet" href="/css/site.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    <!-- TODO: change this from CF default favicon, replacement file name MUST be favicon.ico -->
   </head>
-  <!-- Change all text with placeholder APP NAME -->
-  <body>
+
+  <body onload="checkData()">
     <!-- Header Banner -->
     <header id="home">
       <!-- Mobile Navigation Bar -->
       <nav
-        class="navbar navbar-expand-lg shadow-lg d-sm-none"
+        class="navbar navbar-expand-lg shadow-lg fixed-top d-sm-none"
         data-bs-theme="dark"
         id="mainNav"
       >
@@ -63,11 +60,9 @@
             class="navbar-brand border-top border-bottom border-white"
             href="/index.html"
           >
-            <img src="/img/JG Logo White.svg" height="40" />
-            APP NAME
-            <!--  TODO: play around with height of image with the height attribute -->
+            <img src="/img/JG Logo White.svg" class="img-fluid brandImaging" />
+            <span id="appName"> APP NAME</span>
           </a>
-          <!-- TODO: customize mobile menu button, and complete navbar -->
           <button
             class="navbar-toggler"
             type="button"
@@ -93,8 +88,9 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active"
-                  aria-current="page" href="/app.html">The App</a>
+                <a class="nav-link active" aria-current="page" href="/app.html"
+                  >The App</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/code.html">The Code</a>
@@ -102,7 +98,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="https://github.com/GI-Jamal/CrucibleChallengeTemplate"
+                  href="https://github.com/GI-Jamal/CrucibleTacoCat"
                   target="_blank"
                   >The Repo</a
                 >
@@ -125,7 +121,7 @@
 
       <!-- Desktop Navigation Bar -->
       <nav
-        class="navbar navbar-expand-lg d-none d-sm-block shadow-lg"
+        class="navbar navbar-expand-lg d-none fixed-top d-sm-block shadow-lg"
         data-bs-theme="dark"
         id="mainNav"
       >
@@ -134,11 +130,9 @@
             class="navbar-brand border-top border-bottom border-white d-flex align-items-center"
             href="/index.html"
           >
-            <img src="/img/JG Logo White.svg" height="40" />
-            APP NAME
-            <!--  TODO: play around with height of image with the height attribute -->
+            <img src="/img/JG Logo White.svg" class="img-fluid brandImaging" />
+            <span id="appName"> APP NAME</span>
           </a>
-          <!-- TODO: customize mobile menu button, and complete navbar -->
           <button
             class="navbar-toggler"
             type="button"
@@ -173,8 +167,12 @@
                   <a class="nav-link" href="/index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active"
-                  aria-current="page" href="/app.html">The App</a>
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/app.html"
+                    >The App</a
+                  >
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/code.html">The Code</a>
@@ -182,7 +180,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link"
-                    href="https://github.com/GI-Jamal/CrucibleChallengeTemplate"
+                    href="https://github.com/GI-Jamal/CrucibleTacoCat"
                     target="_blank"
                     >The Repo</a
                   >
@@ -206,7 +204,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container-xxl my-5">
+    <main class="container-xxl mainMargins">
       <div>
         <h1 class="titleText">APP UI GOES HERE</h1>
         <input type="text" placeholder="Enter a Message" id="message" />
@@ -221,8 +219,10 @@
           class="footer-main py-3 row row-cols-1 row-cols-md-3 align-items-center text-center gy-3 gy-md-0"
         >
           <div class="col">
-            <img src="/img/Jamal Name Logo White.png" height="40" />
-            <!-- TODO: change image height and image -->
+            <img
+              src="/img/Jamal Name Logo White.png"
+              class="img-fluid brandImaging"
+            />
           </div>
           <div class="col text-md-end order-first order-md-last">
             <a
@@ -233,9 +233,6 @@
             <a href="https://github.com/GI-Jamal" target="_blank"
               ><i class="socialicons bi bi-github p-2"></i
             ></a>
-            <a href="https://twitter.com/GI__Jamal" target="_blank"
-              ><i class="socialicons bi bi-twitter p-2"></i
-            ></a>
           </div>
           <div class="col text-light order-md-first text-md-start">
             &copy; 2023 Jamal Gibson
@@ -243,6 +240,17 @@
         </div>
       </div>
     </footer>
+
+    <template id="tableRowTemplate">
+      <tr>
+        <td data-id="monthNumber"></td>
+        <td data-id="payment"></td>
+        <td data-id="principal"></td>
+        <td data-id="interest"></td>
+        <td data-id="totalInterest"></td>
+        <td data-id="balance"></td>
+      </tr>
+    </template>
 
     <!-- Bootstrap JS -->
     <script
@@ -265,6 +273,9 @@
         "right-trim": true,
       });
     </script>
+
+    <!-- SweetAlerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Custom JS -->
     <script src="/js/site.js"></script>
