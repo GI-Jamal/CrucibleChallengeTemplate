@@ -55,7 +55,7 @@
   --keppel: #4ea699ff;
   --emerald: #2dd881ff;
   --emerald2: rgb(39, 182, 108);
-  --jg-gradient-color: linear-gradient(135deg, #1c164d, #482c69 67%, #863e97);
+  --jg-gradient-color: linear-gradient(135deg, #1c164d, #482c69 57%, #68347f, #863e97);
 
   /* COLOR TESTING */
   --jg-nav-test-color: var(--jg-gradient-color);
