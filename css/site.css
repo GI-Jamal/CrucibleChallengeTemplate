@@ -55,7 +55,13 @@
   --keppel: #4ea699ff;
   --emerald: #2dd881ff;
   --emerald2: rgb(39, 182, 108);
-  --jg-gradient-color: linear-gradient(135deg, #1c164d, #482c69 57%, #68347f, #863e97);
+  --jg-gradient-color: linear-gradient(
+    135deg,
+    #1c164d,
+    #482c69 57%,
+    #68347f,
+    #863e97
+  );
 
   /* COLOR TESTING */
   --jg-nav-test-color: var(--jg-gradient-color);
@@ -123,19 +129,6 @@ body {
   color: var(--emerald2);
 }
 
-.btn-bd-primary {
-  --bs-btn-font-weight: 500;
-  --bs-btn-color: var(--emerald2);
-  --bs-btn-border-color: var(--emerald2);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: var(--emerald2);
-  --bs-btn-hover-border-color: var(--emerald2);
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-white);
-  --bs-btn-active-bg: var(--emerald);
-  --bs-btn-active-border-color: var(--emerald2);
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -143,8 +136,8 @@ body {
   font-size: var(--jg-font-size);
   font-weight: var(--jg-font-weight);
   line-height: var(--jg-line-height);
-  color: var(--jg-title-test-color);
-  background: var(--jg-body-test-color);
+  color: var(--white);
+  background: var(--jg-gradient-color);
   background-attachment: fixed;
 }
 
@@ -165,11 +158,11 @@ footer {
 }
 
 .socialicons:hover {
-  color: var(--jg-links-hover-test-color);
+  color: var(--emerald);
 }
 
 footer {
-  background-color: var(--jg-footer-test-color);
+  background-color: var(--jet);
 }
 /* END: Footer */
 
@@ -187,12 +180,17 @@ footer {
 }
 
 #bootstrapLogo {
-  max-width: 13%;
+  max-width: 13.33%;
 }
 
 .appLogo {
   max-width: 270px;
   margin-bottom: 1rem;
+  max-height: 270px;
+}
+
+.imgWrapper {
+  height: 100%;
 }
 
 .mainMargins {
@@ -208,7 +206,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-
 .offcanvas.offcanvas-end {
   width: auto;
   text-align: right;
@@ -216,10 +213,22 @@ footer {
 
 .btnAlign {
   padding-right: 1.6rem !important;
-  padding-top: .8rem !important;
+  padding-top: 0.8rem !important;
+}
+
+.btn-bd-primary {
+  --bs-btn-font-weight: 500;
+  --bs-btn-color: var(--emerald2);
+  --bs-btn-border-color: var(--emerald2);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--emerald2);
+  --bs-btn-hover-border-color: var(--emerald2);
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-active-bg: var(--emerald);
+  --bs-btn-active-border-color: var(--emerald2);
 }
 /* Media Queries*/
-
 
 @media (max-width: 240px) {
   #appName {
@@ -232,16 +241,15 @@ footer {
     max-width: 190px;
     margin-bottom: 1rem;
   }
-
 }
 
 @media (max-width: 317px) {
   span {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  
+
   i {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   h4 {
@@ -253,8 +261,6 @@ footer {
   .appLogo {
     max-width: 200px;
   }
-
-
 }
 
 @media (max-width: 380px) {
@@ -322,7 +328,7 @@ footer {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) and (min-height: 500px) {
+@media (min-width: 768px) and (max-width: 992px) and (min-height: 500px) {
   .appLogo {
     max-width: 350px;
   }
