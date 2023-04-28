@@ -194,8 +194,8 @@ footer {
 }
 
 .mainMargins {
-  margin-top: 5.5rem;
-  margin-bottom: 3rem;
+  margin-top: 4.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .brandImaging {
@@ -282,7 +282,7 @@ footer {
   }
 
   h4 {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -337,5 +337,17 @@ footer {
 @media (min-width: 992px) {
   .appLogo {
     max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 535px) and (orientation: landscape) {
+  #logoCol {
+    height: 100%;
+    padding-top: 1rem;
+  }
+
+  .appLogo{
+    max-height: 270px;
   }
 }
