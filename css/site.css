@@ -24,7 +24,7 @@
   --jg-rich-black: #00171f;
   --jg-prussian-blue: #003459;
   --jg-white: #ffffff;
-  --jet: rgba(60, 55, 68, 0.61);
+  --jg-jet: rgba(60, 55, 68, 0.61);
   --duke-blue: #090c9bff;
   --byzantine-blue: #3d52d5ff;
   --gunmetal: #30343fff;
@@ -53,8 +53,8 @@
   --dark-purple2: rgb(34, 34, 34);
   --federal-blue: #140d4fff;
   --keppel: #4ea699ff;
-  --emerald: #2dd881ff;
-  --emerald2: rgb(39, 182, 108);
+  --jg-emerald: #2dd881ff;
+  --jg-emerald2: rgb(39, 182, 108);
   --jg-gradient-color: linear-gradient(
     135deg,
     #1c164d,
@@ -63,39 +63,36 @@
     #863e97
   );
 
-  /* COLOR TESTING */
-  --jg-nav-test-color: var(--jg-gradient-color);
-  --jg-body-test-color: var(--jg-gradient-color);
-  --jg-links-test-color: var(--emerald);
-  --jg-links-hover-test-color: var(--hunyadi-yellow);
-  --jg-title-test-color: var(--white);
-  --jg-nav-text-test-color: var(--carolina-blue);
-  --jg-footer-test-color: var(--jet);
-  --jg-content-test-color: var(--white);
+  /* Main Colors  */
+  --jg-title-color: var(--jg-emerald2);
+  --jg-content-color: var(--jg-white);
+  --jg-main-bg-color: var(--jg-gradient-color);
+  --jg-checkmark-color: var(--jg-title-color);
+  --jg-button-color-1: var(--jg-title-color);
+  --jg-button-color-2: var(--jg-emerald);
 
   /* Nav bar colors */
-  --jg-nav-bg-color: var(--jg-gradient-color);
-  --jg-nav-toggler-color: var(--emerald2);
-  --jg-nav-toggler-glow: var(--emerald2);
-
-  /* Form colors */
-  --jg-formfocus-border-color: var(--jg-secondary-color);
-  --jg-formfocus-shadow: var(--jg-primary-color);
-  --jg-form-background-color: var(--jg-background-color);
+  --jg-nav-bg-color: var(--jg-main-bg-color);
+  --jg-nav-toggler-color: var(--jg-emerald2);
+  --jg-nav-toggler-glow: var(--jg-emerald);
 
   /* Text styles */
-  --jg-title-color: var(--jg-title-test-color);
   --jg-font-size: 1.1rem;
   --jg-font-weight: 400;
   --jg-line-height: 1.5rem;
-}
 
-/*
-font-family: 'Allan', cursive;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Fira Sans', sans-serif;
-font-family: 'Roboto', sans-serif;
-*/
+  /* Footer Colors */
+  --jg-footer-bg-color: var(--jg-jet);
+  --jg-socials-color: var(--jg-nav-toggler-color);
+  --jg-socials-hover-color: var(--jg-nav-toggler-glow);
+
+  /*
+  font-family: 'Allan', cursive;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  */
+}
 
 /* START: Nav Bar*/
 .navbar-toggle-icon {
@@ -126,7 +123,7 @@ body {
 }
 
 .titleText {
-  color: var(--emerald2);
+  color: var(--jg-title-color);
 }
 
 body {
@@ -136,8 +133,8 @@ body {
   font-size: var(--jg-font-size);
   font-weight: var(--jg-font-weight);
   line-height: var(--jg-line-height);
-  color: var(--white);
-  background: var(--jg-gradient-color);
+  color: var(--jg-content-color);
+  background: var(--jg-main-bg-color);
   background-attachment: fixed;
 }
 
@@ -153,16 +150,16 @@ footer {
 /* START: Footer */
 .socialicons {
   font-size: 1.5rem;
-  color: var(--emerald2);
+  color: var(--jg-socials-color);
   transition: color 0.25s;
 }
 
 .socialicons:hover {
-  color: var(--emerald);
+  color: var(--jg-socials-hover-color);
 }
 
 footer {
-  background-color: var(--jet);
+  background-color: var(--jg-footer-bg-color);
 }
 /* END: Footer */
 
@@ -171,7 +168,7 @@ footer {
 }
 
 .checklist > li i {
-  color: var(--emerald2);
+  color: var(--jg-checkmark-color);
   padding-right: 0.5rem;
 }
 
@@ -206,27 +203,17 @@ footer {
   margin-bottom: 1rem;
 }
 
-.offcanvas.offcanvas-end {
-  width: auto;
-  text-align: right;
-}
-
-.btnAlign {
-  padding-right: 1.6rem !important;
-  padding-top: 0.8rem !important;
-}
-
 .btn-bd-primary {
   --bs-btn-font-weight: 500;
-  --bs-btn-color: var(--emerald2);
-  --bs-btn-border-color: var(--emerald2);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: var(--emerald2);
-  --bs-btn-hover-border-color: var(--emerald2);
+  --bs-btn-color: var(--jg-button-color-1);
+  --bs-btn-border-color: var(--jg-button-color-1);
+  --bs-btn-hover-color: var(--jg-content-color);
+  --bs-btn-hover-bg: var(--jg-button-color-1);
+  --bs-btn-hover-border-color: var(--jg-button-color-1);
   --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-white);
-  --bs-btn-active-bg: var(--emerald);
-  --bs-btn-active-border-color: var(--emerald2);
+  --bs-btn-active-color: var(--jg-content-color);
+  --bs-btn-active-bg: var(--jg-button-color-2);
+  --bs-btn-active-border-color: var(--jg-button-color-1);
 }
 /* Media Queries*/
 
