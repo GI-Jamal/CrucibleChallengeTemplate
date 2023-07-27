@@ -1,26 +1,11 @@
-const tooltipTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="tooltip"]'
-);
-const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-);
-
-var previouslyClickedElement = null;
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const sweetalert2_1 = require("sweetalert2");
+const bootstrap = require("bootstrap");
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 function displayMessage() {
-  let msg = document.getElementById("message").value;
-  //alert(msg);
-
-  Swal.fire({
-    backdrop: false,
-    title: "App Name",
-    text: msg,
-  });
+    let msg = document.getElementById("message").textContent;
+    sweetalert2_1.default.fire(msg);
 }
-
-// function navTogglerClicker(navToggler)
-// {
-//   let togglerType = navToggler;
-//   let toggler = navToggler
-//   if (toggler )
-// }
+//# sourceMappingURL=site.js.map
